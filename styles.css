@@ -1,0 +1,927 @@
+/* Definición de Variables de Color para Modo Oscuro y Claro */
+:root[data-theme="dark"] {
+  --bg-color: #0f141c;
+  --card-bg: #171f2c;
+  --border-color: #2a374c;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-color: #38bdf8;
+  --header-bg: rgba(15, 20, 28, 0.85);
+}
+
+:root[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent-color: #0284c7;
+  --header-bg: rgba(248, 250, 252, 0.85);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font-family: "Fira Code", monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo::before {
+  content: "<";
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+.logo::after {
+  content: "/>";
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.logo:hover {
+  color: var(--accent-color);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent-color);
+}
+
+#theme-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+  border-color: var(--accent-color);
+}
+
+/* Contenedor principal que centra las tarjetas */
+main {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 120px 20px 60px 20px;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Control de visibilidad de las tarjetas (Sistema de pestañas) */
+main .card {
+  display: none; /* Ocultas por defecto */
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 70px 60px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Mostrar únicamente la tarjeta de inicio al cargar la página */
+main .card#inicio {
+  display: flex; /* Mantiene el diseño flex original del hero */
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Estilos internos de la tarjeta de inicio */
+.hero-content p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.hero-content h1,
+.hero-content h2 {
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 220px;
+  height: auto;
+}
+
+h1 {
+  font-size: 44px;
+  margin: 0 0 10px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 20px;
+  color: var(--accent-color);
+  margin: 0 0 20px 0;
+  font-family: "Fira Code", monospace;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Estilos para la sección de Portafolio dentro de su tarjeta */
+.portafolio-card {
+  display: none; /* Se activará mediante JavaScript */
+  flex-direction: column;
+}
+
+.portafolio-card .section-title {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-item {
+  background-color: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-color);
+}
+
+.project-item h3 {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-tags span {
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "Fira Code", monospace;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-link {
+  font-size: 0.85rem;
+  color: #0b0f19;
+  background-color: var(--accent-color);
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-link.secondary {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.badge-status {
+  font-size: 0.8rem;
+  color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+/* Centrar el título principal de la sección de proyectos */
+.portafolio-card .section-title {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Centrar también los títulos y textos dentro de cada tarjeta de proyecto */
+.project-item {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.project-item h3 {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Centrar las etiquetas de tecnología y los botones/badges inferiores */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+/* Contenedor de la imagen para respetar los bordes de la tarjeta */
+.project-image {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: var(--bg-color);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom sutil al pasar el cursor sobre la tarjeta */
+.project-item:hover .project-image img {
+  transform: scale(1.05);
+}
+/* Estilos para la tarjeta Sobre Mí */
+#sobre-mi {
+  background-color: var(--card-bg, #1e293b);
+  border: 1px solid var(--border-color, #334155);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#sobre-mi h2 {
+  font-size: 2rem;
+  color: var(--text-main, #ffffff);
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+#sobre-mi .about-content p {
+  font-size: 1rem;
+  color: var(--text-muted, #94a3b8);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+/* --- ESTILOS MENÚ HAMBURGUESA MÓVIL --- */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-main);
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  header nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    z-index: 1000;
+  }
+
+  header nav.active-menu {
+    display: flex;
+  }
+}
+
+/* ======================================================== */
+/* SECCIÓN CV & HABILIDADES (Ajustado para igualar alturas)  */
+/* ======================================================== */
+.cv-section {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cv-container-general {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.cv-card {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #f3f4f6;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cv-card h3 {
+  color: #38bdf8;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.skill-category {
+  margin-bottom: 12px;
+}
+
+.skill-category h4 {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #1f2937;
+  color: #e5e7eb;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid #374151;
+}
+
+.soft-skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.soft-skills-list li {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 14px 18px;
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  position: relative;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.soft-skills-list li:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.soft-skills-list i {
+  color: #38bdf8 !important;
+  position: absolute !important;
+  left: 18px !important;
+  font-size: 1rem !important;
+  display: inline-block !important;
+  background: none;
+}
+
+.cv-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-cv:hover {
+  background-color: #38bdf8;
+  color: #111827;
+}
+
+@media (max-width: 768px) {
+  .cv-container-general {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Estilos para la parrilla de iconos --- */
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+.icons-grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 8px 5px;
+  transition: all 0.2s ease;
+}
+
+.icons-grid li:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+}
+
+.icons-grid li i {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.icons-grid li span {
+  font-size: 0.7rem;
+  color: #e5e7eb;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* --- Colores Oficiales de Devicon --- */
+.devicon-java-plain {
+  color: #ed8b0d;
+}
+.devicon-springboot-plain {
+  color: #6db33f;
+}
+.devicon-mysql-plain {
+  color: #00758f;
+}
+.devicon-git-plain {
+  color: #f05033;
+}
+.devicon-github-original {
+  color: #ffffff;
+}
+.devicon-intellij-plain {
+  color: #000000;
+}
+.devicon-vscode-plain {
+  color: #007acc;
+}
+.devicon-postman-plain {
+  color: #ff6c37;
+}
+.devicon-figma-plain {
+  color: #f24e1e;
+}
+.devicon-html5-plain {
+  color: #e34f26;
+}
+.devicon-css3-plain {
+  color: #1572b6;
+}
+.devicon-javascript-plain {
+  color: #f7df1e;
+}
+.devicon-bootstrap-plain {
+  color: #7952b3;
+}
+
+.skill-category .fa-cube {
+  color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+  .icons-grid {
+    justify-content: center;
+  }
+  .icons-grid li {
+    width: 60px;
+  }
+  .icons-grid li i {
+    font-size: 2.5rem;
+  }
+}
+
+/*********************************************/
+/* Estilos Blog - Estética consistente y corregida */
+#blog {
+  display: none; /* Controlado correctamente por tu script de pestañas */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#blog.card {
+  display: none; /* Mantiene el comportamiento oculto inicial igual que el resto */
+}
+
+#blog .section-title {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+#blog .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.blog-item {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  height: 420px; /* Altura fija para que todas las tarjetas midan exactamente lo mismo */
+  box-sizing: border-box;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.blog-item p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  overflow: hidden; /* Oculta el exceso de texto en la tarjeta principal para que no se desborde */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 4; /* Propiedad estándar moderna */
+  -webkit-line-clamp: 4; /* Compatibilidad */
+  -webkit-box-orient: vertical;
+}
+
+.blog-item:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-4px);
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.75rem;
+}
+
+.blog-date {
+  color: var(--text-muted);
+}
+
+.blog-category {
+  color: var(--accent-color);
+}
+
+.blog-item h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.blog-item p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+  color: var(--text-muted);
+}
+
+/* Estilo del botón enlace con color asegurado para ambos temas */
+.blog-item .btn-link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  color: var(--accent-color) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+.blog-item .btn-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Fondo oscuro detrás del modal */
+.blog-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Caja de la ventana modal */
+.modal-content {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 35px;
+  width: 100%;
+  max-width: 650px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: modalFadeIn 0.3s ease;
+  text-align: left;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón de cerrar (la X) */
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+  color: var(--accent-color);
+}
+
+.modal-content h2 {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  margin: 10px 0 5px 0;
+}
+
+.modal-date {
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.modal-body-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.modal-body-text p {
+  margin-bottom: 15px;
+}
+
+.modal-body-text ul {
+  margin: 15px 0;
+  padding-left: 20px;
+  list-style-type: square;
+}
+/* Unificamos el título de sección para que tome el color de acento en todas partes */
+.section-title {
+  font-size: 2rem;
+  color: var(--accent-color) !important;
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-main);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}

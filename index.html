@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Santiago López | Portafolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Devicon Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header / Barra de Navegación -->
+    <header>
+      <div class="nav-container">
+        <a href="#inicio" class="logo">Santiago López</a>
+        <div class="nav-right">
+          <nav>
+            <a href="#inicio" class="active">INICIO</a>
+            <a href="#portafolio">PORTAFOLIO</a>
+            <a href="#sobre-mi">ACERCA DE MÍ</a>
+            <a href="#cv-habilidades">CV & HABILIDADES</a>
+            <a href="#blog">BLOG</a>
+          </nav>
+          <!-- Botón de Modo Oscuro / Claro -->
+          <button id="theme-toggle" aria-label="Cambiar modo de color">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <!-- Botón Hamburguesa para Móvil -->
+          <button id="menu-toggle" class="menu-btn" aria-label="Abrir menú">
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+      <!-- SECCIÓN 1: INICIO -->
+      <section id="inicio" class="card hero-card">
+        <div class="hero-content">
+          <h1>Hola, soy Santiago</h1>
+          <h2>Desarrollador Java Fullstack Jr.</h2>
+          <p>
+            Enfocado en el desarrollo backend con
+            <strong>Java, Spring Boot y MySQL</strong>. Con capacidad para
+            construir interfaces web modernas (HTML, CSS, JS, Bootstrap).
+            Apasionado por diseñar lógica de negocio robusta, APIs REST
+            eficientes y soluciones web escalables.
+          </p>
+         <div class="actions">
+            <a href="#contacto" class="btn-primary">¡Contáctame!</a>
+            
+            <div class="social-icons">
+              <a href="https://linkedin.com/in/noé-santiago-lópez-damián/" target="_blank" title="LinkedIn">
+                <i class="devicon-linkedin-plain"></i>
+              </a>
+              <a href="https://github.com/nsantiagold" target="_blank" title="GitHub">
+                <i class="devicon-github-original"></i>
+              </a>
+              <a href="mailto:nsantiagolopezdamian@gmail.com" title="Correo">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="img/fotosanti.png" alt="Santiago López" />
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: PORTAFOLIO -->
+      <section
+        id="portafolio"
+        class="card portafolio-card"
+        style="display: none"
+      >
+        <h2 class="section-title">Proyectos</h2>
+
+        <div class="projects-grid">
+          <!-- Proyecto 1: Proyecto Integrador -->
+          <div class="project-item">
+            <div class="project-image">
+              <img src="img/Tienda.gif" alt="La Tienda de la Yeya" />
+            </div>
+            <h3>Proyecto Integrador FullStack - La Tienda de la Yeya</h3>
+            <p>
+              Aplicación web FullStack que conecta una interfaz interactiva de
+              tienda en línea con servicios REST backend en Java, gestión de
+              base de datos relacional y lógica de catálogo.
+            </p>
+            <div class="tech-tags">
+              <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+              <span>JS</span><span>Java</span><span>Spring Boot</span>
+              <span>MySQL</span>
+            </div>
+            <div class="project-links">
+              <span class="badge-status">En Construcción</span>
+            </div>
+          </div>
+
+          <!-- Proyecto 2: Landing Page -->
+          <div class="project-item">
+            <div class="project-image">
+              <img src="img/KOFIT.gif" alt="Landing Page Responsiva" />
+            </div>
+            <h3>Landing Page Responsiva</h3>
+            <p>
+              Proyecto maquetado durante una Hackathon, enfocado en adaptación
+              móvil rápida y maquetación limpia.
+            </p>
+            <div class="tech-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+              <span>Bootstrap</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://diegoeliaslopez.github.io/Hakathon-KOFit/"
+                target="_blank"
+                class="btn-link"
+                >Ver Demo</a
+              >
+              <a
+                href="https://github.com/DIEGOELIASLOPEZ/Hakathon-KOFit"
+                target="_blank"
+                class="btn-link secondary"
+                >GitHub</a
+              >
+            </div>
+          </div>
+
+          <!-- Proyecto 3: Portafolio -->
+          <div class="project-item">
+            <div class="project-image">
+              <img src="img/portafolio.gif" alt="Portafolio" />
+            </div>
+            <h3>Portafolio</h3>
+            <p>
+              Sitio web personal y portafolio profesional desarrollado con
+              diseño responsivo para mostrar trayectoria, habilidades técnicas y
+              proyectos destacados en desarrollo de software.
+            </p>
+            <div class="tech-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://diegoeliaslopez.github.io/Hakathon-KOFit/"
+                target="_blank"
+                class="btn-link"
+                >Ver Demo</a
+              >
+              <a
+                href="https://github.com/DIEGOELIASLOPEZ/Hakathon-KOFit"
+                target="_blank"
+                class="btn-link secondary"
+                >GitHub</a
+              >
+            </div>
+          </div>
+
+          <!-- Proyecto 4: API REST -->
+          <div class="project-item">
+            <div class="project-image">
+              <img src="img/APIGIF.gif" alt="APIS" />
+            </div>
+            <h3>API REST con Java & MySQL</h3>
+            <p>
+              Sistema backend enfocado en arquitectura en capas, manejo de bases
+              de datos relacionales y endpoints REST.
+            </p>
+            <div class="tech-tags">
+              <span>Java</span><span>Spring Boot</span><span>MySQL</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/nsantiagold/api-inventario-spring"
+                target="_blank"
+                class="btn-link secondary"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: ACERCA DE MI -->
+      <section id="sobre-mi" class="card" style="display: none">
+        <h2 class="section-title">ACERCA DE MÍ</h2>
+        <div class="about-content">
+          <p>
+            ¡Hola! Soy Santiago, un desarrollador enfocado en el ecosistema de
+            <strong>Java y el desarrollo Backend</strong>. Mi camino en la
+            programación nació de la curiosidad por entender cómo funcionan los
+            sistemas detrás de pantalla y del gusto por resolver problemas
+            complejos mediante código limpio.
+          </p>
+          <p>
+            Actualmente, me especializo en la creación de aplicaciones web
+            utilizando <strong>Java, Spring Boot y MySQL</strong> para la
+            arquitectura de datos, complementándolo con herramientas como
+            <strong>Bootstrap, Git y GitHub</strong> para entregar proyectos
+            completos y bien estructurados.
+          </p>
+          <p>
+            Me motiva el trabajo en equipo y el constante aprendizaje. He puesto
+            a prueba mis habilidades colaborativas y de resolución de problemas
+            bajo presión participando en
+            <strong>hackathons y proyectos integradores</strong>, experiencias
+            que han reforzado mi pasión por construir software eficiente y de
+            calidad.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: CV & HABILIDADES -->
+      <section
+        id="cv-habilidades"
+        class="cv-section card"
+        style="display: none"
+      >
+        <div class="cv-container-general">
+          <!-- Caja Izquierda: Tecnologías & Herramientas -->
+          <!-- Caja Izquierda: Tecnologías & Herramientas (ACTUALIZADA) -->
+          <div class="cv-card">
+            <h3><i class="fas fa-code"></i> Tecnologías & Herramientas</h3>
+
+            <!-- Categoría Backend -->
+            <div class="skill-category">
+              <h4>Backend</h4>
+              <ul class="icons-grid">
+                <li>
+                  <i class="devicon-java-plain"></i>
+                  <span>Java</span>
+                </li>
+                <li>
+                  <i class="devicon-springboot-plain"></i>
+                  <span>Spring Boot</span>
+                </li>
+                <!-- POO es un concepto, no tiene logo oficial en Devicon,
+                 usamos un icono genérico de programación -->
+                <li>
+                  <i class="fas fa-cube"></i>
+                  <span>POO</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Categoría Bases de Datos -->
+            <div class="skill-category">
+              <h4>Bases de Datos</h4>
+              <ul class="icons-grid">
+                <li>
+                  <i class="devicon-mysql-plain"></i>
+                  <span>MySQL</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Categoría Control de Versiones -->
+            <div class="skill-category">
+              <h4>Control de Versiones y Herramientas</h4>
+              <ul class="icons-grid">
+                <li>
+                  <i class="devicon-git-plain"></i>
+                  <span>Git</span>
+                </li>
+                <li>
+                  <i class="devicon-github-original"></i>
+                  <span>GitHub</span>
+                </li>
+                <li>
+                  <i class="devicon-intellij-plain"></i>
+                  <span>IntelliJ</span>
+                </li>
+                <li>
+                  <i class="devicon-vscode-plain"></i>
+                  <span>VS Code</span>
+                </li>
+                <li>
+                  <i class="devicon-postman-plain"></i>
+                  <span>Postman</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Categoría Frontend / Web -->
+            <div class="skill-category">
+              <h4>Frontend / Web</h4>
+              <ul class="icons-grid">
+                <li>
+                  <i class="devicon-html5-plain"></i>
+                  <span>HTML5</span>
+                </li>
+                <li>
+                  <i class="devicon-css3-plain"></i>
+                  <span>CSS3</span>
+                </li>
+                <li>
+                  <i class="devicon-javascript-plain"></i>
+                  <span>JavaScript</span>
+                </li>
+                <li>
+                  <i class="devicon-bootstrap-plain"></i>
+                  <span>Bootstrap</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Caja Derecha: Soft Skills y CV (Actualizada) -->
+          <div class="cv-card soft-skills-card">
+            <h3><i class="fas fa-user"></i> Soft Skills</h3>
+
+            <ul class="soft-skills-list">
+              <li><i class="fas fa-check"></i> Resolución de problemas</li>
+              <li><i class="fas fa-check"></i> Pensamiento Analítico</li>
+              <li><i class="fas fa-check"></i> Trabajo en equipo</li>
+              <li><i class="fas fa-check"></i> Capacidad de Autoaprendizaje</li>
+              <li><i class="fas fa-check"></i> Orientación a resultados</li>
+            </ul>
+
+            <div class="cv-button-container">
+              <a href="CV-NSLD.pdf" target="_blank" class="btn-cv">
+                <i class="fas fa-file-pdf"></i> Ver / Descargar CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5: BLOG-->
+      <section id="blog" class="card">
+        <!-- SECCIÓN 5: BLOG TÉCNICO -->
+          <h2 class="section-title">Blog</h2>
+
+          <div class="blog-grid">
+            <!-- Post 1 -->
+            <div class="blog-item">
+              <div>
+                <div class="blog-header">
+                  <span class="blog-date">Agosto 2026</span>
+                  <span class="blog-category">Java / Backend</span>
+                </div>
+                <h3>Mi experiencia en el bootcamp Java Fullstack y Hackathons</h3>
+                <p>
+                  El paso por el bootcamp de Java Fullstack ha representado un punto de inflexión en mi formación como desarrollador backend y APIs REST...
+                </p>
+              </div>
+              <button class="btn-link open-modal" data-target="modal-1">
+                Leer artículo completo →
+              </button>
+            </div>
+
+            <!-- Post 2 -->
+          <div class="blog-item">
+              <div>
+                <div class="blog-header">
+                  <span class="blog-date">Agosto 2026</span>
+                  <span class="blog-category">Frontend / Clean Code</span>
+                </div>
+                <h3>Arquitectura limpia: Separa tu HTML, CSS y JS</h3>
+                <p>
+                  Mezclar estilos o scripts dentro de un mismo archivo HTML puede parecer rápido al inicio, pero destruye la mantenibilidad del proyecto...
+                </p>
+              </div>
+              <button class="btn-link open-modal" data-target="modal-2">
+                Leer artículo completo →
+              </button>
+            </div>
+
+            <!-- Post 3 -->
+        <div class="blog-item">
+              <div>
+                <div class="blog-header">
+                  <span class="blog-date">Julio 2026</span>
+                  <span class="blog-category">Soft Skills</span>
+                </div>
+                <h3>Lecciones clave del Hackathon y trabajo en equipo</h3>
+                <p>
+                  3 aprendizajes fundamentales sobre la colaboración en
+                  repositorios compartidos, el manejo de ramas y la integración
+                  continua...
+                </p>
+              </div>
+              <button class="btn-link open-modal" data-target="modal-3">
+                Leer artículo completo →
+              </button>
+            </div>
+            <!-- Post 4 -->
+            <div class="blog-item">
+              <div>
+                <div class="blog-header">
+                  <span class="blog-date">Agosto 2026</span>
+                  <span class="blog-category">Fullstack / Proyectos</span>
+                </div>
+                <h3>Retos y aprendizajes en mi primer proyecto</h3>
+                <p>
+                  Construir un proyecto integrador desde cero implica conectar la lógica del desarrollo con una interfaz funcional, enfrentando retos reales de arquitectura...
+                </p>
+              </div>
+              <button class="btn-link open-modal" data-target="modal-4">
+                Leer artículo completo →
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- VENTANAS MODALES (Se abren al dar clic) -->
+        <div id="modal-1" class="blog-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <span class="blog-category">Java / Backend</span>
+            <h2>Mi experiencia en el bootcamp Java Fullstack y Hackathons</h2>
+            <p class="modal-date">Agosto 2026</p>
+            <div class="modal-body-text">
+              <p>
+                El paso por el bootcamp de Java Fullstack ha representado un punto de inflexión en mi formación como desarrollador. Enfrentar los retos técnicos del desarrollo backend, la arquitectura de APIs REST y el modelado de bases de datos relacionales me permitió consolidar bases sólidas para construir software robusto y escalable.
+              </p>
+              <p>
+                Asimismo, mi participación en hackathons puso a prueba mi capacidad de adaptación y trabajo en equipo bajo presión. Aprendí a coordinar ramas de Git de forma limpia para evitar conflictos con mis compañeros, optimizar tiempos de entrega y aplicar metodologías ágiles para sacar adelante proyectos funcionales en tiempo récord.
+              </p>
+              <p>
+                Esta combinación de rigor técnico y colaboración constante ha fortalecido mi perfil como desarrollador en formación, preparándome para aportar valor real desde el primer día en cualquier equipo de ingeniería de software.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="modal-2" class="blog-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <span class="blog-category">Java / Spring Boot</span>
+            <h2>Arquitectura limpia: Separa tu HTML, CSS y JS</h2>
+            <p class="modal-date">Agosto 2026</p>
+            <div class="modal-body-text">
+              <p>
+                Mezclar estilos o scripts dentro de un mismo archivo HTML puede parecer rápido al inicio, pero destruye la mantenibilidad del proyecto. Arquitectura limpia, separación de responsabilidades y buenas prácticas
+              </p>  
+              <p>
+                Cuando iniciamos en el desarrollo web, la tentación de escribir estilos en línea o colocar lógica de JavaScript dentro del mismo archivo HTML es común para ver resultados inmediatos. Sin embargo, a medida que un proyecto crece, esta práctica se convierte en un obstáculo crítico para la escalabilidad.
+              </p>
+              <p>
+                La separación de responsabilidades —manteniendo la estructura en HTML, el diseño en CSS independiente y la lógica en scripts modulares de JavaScript— es una regla de oro que garantiza un código limpio, legible y fácil de depurar.
+                Aplicar esta disciplina no solo facilita el trabajo en equipo evitando sobreescribir código de los compañeros, sino que demuestra un estándar profesional en la construcción de interfaces modernas y ordenadas.
+            </div>
+          </div>
+        </div>
+
+        <div id="modal-3" class="blog-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <span class="blog-category">Soft Skills</span>
+            <h2>Lecciones clave del Hackathon y trabajo en equipo</h2>
+            <p class="modal-date">Julio 2026</p>
+            <div class="modal-body-text">
+              <p>
+                3 aprendizajes fundamentales sobre la colaboración en
+                repositorios compartidos:
+              </p>
+              <ul>
+                <li>
+                  La comunicación constante previene conflictos de código
+                  complejos antes del commit.
+                </li>
+                <li>
+                  El uso estricto de ramas independientes por cada integrante
+                  evita romper el trabajo de los compañeros.
+                </li>
+                <li>
+                  Realizar code reviews rápidas y pruebas locales asegura
+                  integraciones exitosas bajo presión.
+                </li>
+              </ul>
+              <p>
+                Conclusiones sobre cómo la experiencia en equipo prepara para
+                entornos laborales reales.
+              </p>
+            </div>
+          </div>
+        </div>
+   <div id="modal-4" class="blog-modal">
+          <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <span class="blog-category">Fullstack / Proyectos</span>
+            <h2>Retos y aprendizajes en mi primer proyecto</h2>
+            <p class="modal-date">Agosto 2026</p>
+            <div class="modal-body-text">
+              <p>
+                Enfrentar un proyecto integrador como "La tienda de la Yeya" representa un punto de inflexión muy importante en el camino del desarrollo de software. No se trata solamente de escribir código que funcione individualmente, sino de lograr que todos los componentes converjan en una aplicación cohesionada.
+              </p>
+              <p>
+                Durante este proceso surgen retos reales: desde estructurar carpetas limpias y mantener separados HTML, CSS y JavaScript, hasta coordinar la lógica general del proyecto. Superar estos obstáculos demuestra que la práctica constante, la paciencia ante los errores y la constancia son las mejores herramientas para consolidar las bases como desarrollador en formación.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="main.js"></script>
+  </body>
+</html>
